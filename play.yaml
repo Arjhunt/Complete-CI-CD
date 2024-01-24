@@ -1,0 +1,21 @@
+---
+- name: install jenkins and java on Master
+  become: true
+  hosts: localhost
+  tasks:
+    - name: running script1.sh
+      script: script1.sh
+
+- name: install kubernetes docker and java on machine-3
+  become: true
+  hosts: master
+  tasks:
+    - name: running script2.sh
+      script: script2.sh
+
+- name: install kubernetes on slaves
+  become: true
+  hosts: slaves
+  tasks:
+    - name: running script3.sh
+      script: script3.sh
